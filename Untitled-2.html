@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Caracteres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://thumbs.dreamstime.com/b/fundo-das-letras-26640296.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            background-color: rgba(226, 218, 218, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+        #contador {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contador de Caracteres</h1>
+        <textarea id="texto" placeholder="Digite seu texto aqui" rows="5"></textarea>
+        <p id="contador">Número de caracteres: 0</p>
+    </div>
+
+    <script>
+        const textarea = document.getElementById("texto");
+        const contador = document.getElementById("contador");
+
+        textarea.addEventListener("input", () => {
+            const texto = textarea.value;
+            const numeroDeCaracteres = texto.length;
+            contador.textContent = `Número de caracteres: ${numeroDeCaracteres}`;
+        });
+    </script>
+</body>
+</html>
