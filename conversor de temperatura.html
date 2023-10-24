@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.pinimg.com/736x/a5/1e/f0/a51ef00d688025e5560eaaebaea05953.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 18px;
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005F77;
+        }
+        #resultado {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <input type="number" id="tempInput" placeholder="Digite a temperatura">
+        <br>
+        <button onclick="converterParaCelsius()">Converter para Celsius</button>
+        <button onclick="converterParaFahrenheit()">Converter para Fahrenheit</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function converterParaCelsius() {
+            var tempInput = document.getElementById("tempInput").value;
+            var celsius = (tempInput - 32) * 5/9;
+            document.getElementById("resultado").textContent = tempInput + " graus Fahrenheit são " + celsius.toFixed(2) + " graus Celsius.";
+        }
+
+        function converterParaFahrenheit() {
+            var tempInput = document.getElementById("tempInput").value;
+            var fahrenheit = (tempInput * 9/5) + 32;
+            document.getElementById("resultado").textContent = tempInput + " graus Celsius são " + fahrenheit.toFixed(2) + " graus Fahrenheit.";
+        }
+    </script>
+</body>
+</html>
